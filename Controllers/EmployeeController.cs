@@ -49,6 +49,15 @@ namespace firstJWT.Controllers
             return emp;
         }
 
+        // PATCH api/<EmployeeController>/5
+        [HttpPatch("{id}")]
+        public Employee Patch(int id, [FromBody] Employee employee)
+        {
+            var emp = _employeeService.UpdateEmployee(employee);
+            return emp;
+        }
+
+
         // DELETE api/<EmployeeController>/5
         [HttpDelete("{id}")]
         public bool Delete(int id)
